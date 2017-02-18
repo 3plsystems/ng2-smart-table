@@ -18,6 +18,10 @@
                         [editConfirm]="editConfirm"
                         (edit)="edit.emit($event)"
                         (delete)="delete.emit($event)"
+                        (customAction1)="customAction1.emit($event)"
+                        (customAction2)="customAction2.emit($event)"
+                        (customAction3)="customAction3.emit($event)"
+                        (customAction4)="customAction4.emit($event)"
                         (userSelectRow)="onUserSelectRow($event)"
                         (editRowSelect)="editRowSelect($event)"
                         (multipleSelectRow)="multipleSelectRow($event)">

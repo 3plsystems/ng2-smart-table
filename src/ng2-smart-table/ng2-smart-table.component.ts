@@ -20,6 +20,10 @@ export class Ng2SmartTableComponent implements OnChanges {
   @Output() public userRowSelect: EventEmitter<any> = new EventEmitter<any>();
   @Output() public delete: EventEmitter<any> = new EventEmitter<any>();
   @Output() public edit: EventEmitter<any> = new EventEmitter<any>();
+  @Output() public customAction1: EventEmitter<any> = new EventEmitter<any>();
+  @Output() public customAction2: EventEmitter<any> = new EventEmitter<any>();
+  @Output() public customAction3: EventEmitter<any> = new EventEmitter<any>();
+  @Output() public customAction4: EventEmitter<any> = new EventEmitter<any>();
   @Output() public create: EventEmitter<any> = new EventEmitter<any>();
   @Output() public deleteConfirm: EventEmitter<any> = new EventEmitter<any>();
   @Output() public editConfirm: EventEmitter<any> = new EventEmitter<any>();
@@ -37,6 +41,10 @@ export class Ng2SmartTableComponent implements OnChanges {
       add: true,
       edit: true,
       delete: true,
+      customAction1: false,
+      customAction2: false,
+      customAction3: false,
+      customAction4: false,
       position: 'left' // left|right
     },
     filter: {
@@ -60,6 +68,27 @@ export class Ng2SmartTableComponent implements OnChanges {
       deleteButtonContent: 'Delete',
       confirmDelete: false
     },
+    customAction1: {
+      custom1ButtonContent: 'Custom1',
+      inputClass: '',
+      title: ''
+    },
+    customAction2: {
+      custom2ButtonContent: 'Custom2',
+      inputClass: '',
+      title: ''
+    },
+    customAction3: {
+      custom3ButtonContent: 'Custom3',
+      inputClass: '',
+      title: ''
+    },
+    customAction4: {
+      custom4ButtonContent: 'Custom4',
+      inputClass: '',
+      title: ''
+    }
+    ,
     attr: {
       id: '',
       class: '',

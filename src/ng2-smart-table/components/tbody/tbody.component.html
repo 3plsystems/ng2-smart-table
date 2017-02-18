@@ -8,6 +8,10 @@
                               [editConfirm]="editConfirm"
                               (edit)="edit.emit(row)"
                               (delete)="delete.emit(row)"
+                              (customAction1)="customAction1.emit(row)"
+                              (customAction2)="customAction2.emit(row)"
+                              (customAction3)="customAction3.emit(row)"
+                              (customAction4)="customAction4.emit(row)"
                               (editRowSelect)="editRowSelect.emit($event)"
                               [row]="row"
                               [source]="source">
@@ -35,6 +39,10 @@
                               [source]="source"
                               (edit)="edit.emit(row)"
                               (delete)="delete.emit(row)"
+                              customAction1)="customAction1.emit(row)"
+                              (customAction2)="customAction2.emit(row)"
+                              (customAction3)="customAction3.emit(row)"
+                              (customAction4)="customAction4.emit(row)"
                               (editRowSelect)="editRowSelect.emit($event)">
     </ng2-st-tbody-edit-delete>
   </td>
