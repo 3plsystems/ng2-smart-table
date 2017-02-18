@@ -20,6 +20,10 @@ var Ng2SmartTableComponent = (function () {
         this.userRowSelect = new core_1.EventEmitter();
         this.delete = new core_1.EventEmitter();
         this.edit = new core_1.EventEmitter();
+        this.customAction1 = new core_1.EventEmitter();
+        this.customAction2 = new core_1.EventEmitter();
+        this.customAction3 = new core_1.EventEmitter();
+        this.customAction4 = new core_1.EventEmitter();
         this.create = new core_1.EventEmitter();
         this.deleteConfirm = new core_1.EventEmitter();
         this.editConfirm = new core_1.EventEmitter();
@@ -34,6 +38,10 @@ var Ng2SmartTableComponent = (function () {
                 add: true,
                 edit: true,
                 delete: true,
+                customAction1: false,
+                customAction2: false,
+                customAction3: false,
+                customAction4: false,
                 position: 'left' // left|right
             },
             filter: {
@@ -56,6 +64,26 @@ var Ng2SmartTableComponent = (function () {
             delete: {
                 deleteButtonContent: 'Delete',
                 confirmDelete: false
+            },
+            customAction1: {
+                custom1ButtonContent: 'Custom1',
+                inputClass: '',
+                title: ''
+            },
+            customAction2: {
+                custom2ButtonContent: 'Custom2',
+                inputClass: '',
+                title: ''
+            },
+            customAction3: {
+                custom3ButtonContent: 'Custom3',
+                inputClass: '',
+                title: ''
+            },
+            customAction4: {
+                custom4ButtonContent: 'Custom4',
+                inputClass: '',
+                title: ''
             },
             attr: {
                 id: '',
@@ -185,6 +213,22 @@ __decorate([
     core_1.Output(),
     __metadata("design:type", core_1.EventEmitter)
 ], Ng2SmartTableComponent.prototype, "edit", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], Ng2SmartTableComponent.prototype, "customAction1", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], Ng2SmartTableComponent.prototype, "customAction2", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], Ng2SmartTableComponent.prototype, "customAction3", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], Ng2SmartTableComponent.prototype, "customAction4", void 0);
 __decorate([
     core_1.Output(),
     __metadata("design:type", core_1.EventEmitter)

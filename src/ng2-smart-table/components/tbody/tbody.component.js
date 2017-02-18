@@ -15,6 +15,10 @@ var Ng2SmartTableTbodyComponent = (function () {
         this.save = new core_1.EventEmitter();
         this.cancel = new core_1.EventEmitter();
         this.edit = new core_1.EventEmitter();
+        this.customAction1 = new core_1.EventEmitter();
+        this.customAction2 = new core_1.EventEmitter();
+        this.customAction3 = new core_1.EventEmitter();
+        this.customAction4 = new core_1.EventEmitter();
         this.delete = new core_1.EventEmitter();
         this.edited = new core_1.EventEmitter();
         this.userSelectRow = new core_1.EventEmitter();
@@ -51,6 +55,22 @@ __decorate([
     core_1.Output(),
     __metadata("design:type", Object)
 ], Ng2SmartTableTbodyComponent.prototype, "edit", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], Ng2SmartTableTbodyComponent.prototype, "customAction1", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], Ng2SmartTableTbodyComponent.prototype, "customAction2", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], Ng2SmartTableTbodyComponent.prototype, "customAction3", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], Ng2SmartTableTbodyComponent.prototype, "customAction4", void 0);
 __decorate([
     core_1.Output(),
     __metadata("design:type", Object)

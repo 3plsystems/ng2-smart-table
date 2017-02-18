@@ -8,6 +8,10 @@ export declare class Ng2SmartTableTbodyComponent {
     save: EventEmitter<any>;
     cancel: EventEmitter<any>;
     edit: EventEmitter<any>;
+    customAction1: EventEmitter<any>;
+    customAction2: EventEmitter<any>;
+    customAction3: EventEmitter<any>;
+    customAction4: EventEmitter<any>;
     delete: EventEmitter<any>;
     edited: EventEmitter<any>;
     userSelectRow: EventEmitter<any>;
