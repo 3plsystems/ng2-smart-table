@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, ElementRef, OnChanges, AfterViewInit } from '@angular/core';
+﻿import { Component, Input, Output, ViewChild, ElementRef, OnChanges, AfterViewInit, EventEmitter } from '@angular/core';
 
 import { Cell } from '../../../lib/data-set/cell';
 
@@ -7,7 +7,7 @@ import { Cell } from '../../../lib/data-set/cell';
   template: `
     <div [ngSwitch]="cell.getColumn().type">
         <div *ngSwitchCase="'html'" #cellContainer [innerHTML]="cell.getValue()"></div>
-
+        <div *ngSwitchCase="'hyperlink'" #cellContainer><a href='javascript:void(0)' (click)='onHyperLinkClick();' [innerHTML]="cell.getValue()"></a></div>
         <div *ngSwitchDefault #cellContainer>{{ cell.getValue() }}</div>
     </div>
     `
@@ -15,6 +15,7 @@ import { Cell } from '../../../lib/data-set/cell';
 export class ViewCellComponent implements OnChanges, AfterViewInit {
 
   @Input() cell: Cell;
+  @Output() hyperlinkClick: EventEmitter<any> = new EventEmitter<any>();
   @ViewChild('cellContainer') cellRef: ElementRef;
 
   ngOnChanges(changes): void {
@@ -23,6 +24,10 @@ export class ViewCellComponent implements OnChanges, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.renderCustomValue();
+  }
+
+  onHyperLinkClick() {
+    this.hyperlinkClick.emit(this.cell);
   }
 
   renderCustomValue(): void {

@@ -1,4 +1,4 @@
-<tr *ngFor="let row of grid.getRows()" (click)="userSelectRow.emit(row)" class="ng2-smart-row" [ngClass]="{selected: row.isSelected}">
+﻿<tr *ngFor="let row of grid.getRows()" (click)="userSelectRow.emit(row)" class="ng2-smart-row" [ngClass]="{selected: row.isSelected}">
   <td *ngIf="grid.isMultiSelectVisible()" class="ng2-smart-actions ng2-smart-action-multiple-select" (click)="multipleSelectRow.emit(row)">
     <input type="checkbox" class="form-control" [ngModel]="row.isSelected">
   </td>
@@ -26,6 +26,7 @@
                           [row]="row"
                           [isNew]="false"
                           [mode]="grid.getSetting('mode')"
+                          (hyperlinkClick)="OnCellClick($event)"
                           [editConfirm]="editConfirm"
                           [inputClass]="grid.getSetting('edit.inputClass')"
                           [isInEditing]="row.isInEditing">
@@ -39,7 +40,7 @@
                               [source]="source"
                               (edit)="edit.emit(row)"
                               (delete)="delete.emit(row)"
-                              customAction1)="customAction1.emit(row)"
+                              (customAction1)="customAction1.emit(row)"
                               (customAction2)="customAction2.emit(row)"
                               (customAction3)="customAction3.emit(row)"
                               (customAction4)="customAction4.emit(row)"

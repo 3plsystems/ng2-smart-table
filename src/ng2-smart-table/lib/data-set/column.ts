@@ -1,4 +1,4 @@
-import { DataSet } from './data-set';
+﻿import { DataSet } from './data-set';
 
 export class Column {
 
@@ -15,9 +15,14 @@ export class Column {
   valuePrepareFunction: Function;
   filterFunction: Function;
   cellRenderFunction: Function;
+  commandNameFunction: Function;
 
   constructor(public id: string, protected settings: any, protected dataSet: DataSet) {
     this.process();
+  }
+
+  public getCommandNameFunction(): Function {
+      return this.commandNameFunction;
   }
 
   public getCompareFunction(): Function {
@@ -56,6 +61,7 @@ export class Column {
     this.valuePrepareFunction = this.settings['valuePrepareFunction'];
     this.filterFunction = this.settings['filterFunction'];
     this.cellRenderFunction = this.settings['cellRenderFunction'];
+    this.commandNameFunction = this.settings['commandNameFunction'];
   }
 
   prepareType(): string {

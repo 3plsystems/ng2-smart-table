@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+﻿import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Grid } from '../../lib/grid';
 
@@ -16,6 +16,7 @@ export class Ng2SmartTableTbodyComponent {
     @Output() save = new EventEmitter<any>();
     @Output() cancel = new EventEmitter<any>();
     @Output() edit = new EventEmitter<any>();
+    @Output() hyperlinkClick = new EventEmitter<any>();
     @Output() customAction1 = new EventEmitter<any>();
     @Output() customAction2 = new EventEmitter<any>();
     @Output() customAction3 = new EventEmitter<any>();
@@ -25,4 +26,8 @@ export class Ng2SmartTableTbodyComponent {
     @Output() userSelectRow = new EventEmitter<any>();
     @Output() editRowSelect = new EventEmitter<any>();
     @Output() multipleSelectRow = new EventEmitter<any>();
+
+    OnCellClick(event) {        
+        this.hyperlinkClick.emit(event);
+    }
 }

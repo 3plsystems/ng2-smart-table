@@ -1,4 +1,4 @@
-import { Component, Input, Output, SimpleChange, EventEmitter, OnChanges, ViewEncapsulation } from '@angular/core';
+﻿import { Component, Input, Output, SimpleChange, EventEmitter, OnChanges, ViewEncapsulation } from '@angular/core';
 
 import { Grid } from './lib/grid';
 import { DataSource } from './lib/data-source/data-source';
@@ -20,6 +20,7 @@ export class Ng2SmartTableComponent implements OnChanges {
   @Output() public userRowSelect: EventEmitter<any> = new EventEmitter<any>();
   @Output() public delete: EventEmitter<any> = new EventEmitter<any>();
   @Output() public edit: EventEmitter<any> = new EventEmitter<any>();
+  @Output() public hyperlinkClick = new EventEmitter<any>();
   @Output() public customAction1: EventEmitter<any> = new EventEmitter<any>();
   @Output() public customAction2: EventEmitter<any> = new EventEmitter<any>();
   @Output() public customAction3: EventEmitter<any> = new EventEmitter<any>();
@@ -114,6 +115,10 @@ export class Ng2SmartTableComponent implements OnChanges {
     } else {
       this.initGrid();
     }
+  }
+
+  OnHyperlinkClick(event) {      
+      this.hyperlinkClick.emit(event);
   }
 
   editRowSelect(row: Row) {

@@ -1,4 +1,4 @@
-import { Column } from './column';
+﻿import { Column } from './column';
 import { DataSet } from './data-set';
 import { Row } from './row';
 
@@ -23,6 +23,10 @@ export class Cell {
     let valid = this.column.getValuePrepareFunction() instanceof Function;
     let prepare = valid ? this.column.getValuePrepareFunction() : Cell.PREPARE;
     return prepare.call(null, this.value, this.row.getData());
+  }
+
+  getCommandName(): any {
+    return this.column.getCommandNameFunction();
   }
 
   setValue(value: any): any {

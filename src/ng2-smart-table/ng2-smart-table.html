@@ -1,4 +1,4 @@
-<div class="ng2-smart-table-container">
+﻿<div class="ng2-smart-table-container">
   <table class="ng2-smart-table table" [id]="grid.getSetting('attr.id')" [ngClass]="grid.getSetting('attr.class')">
 
     <thead ng2-st-thead *ngIf="!grid.getSetting('hideHeader') || !grid.getSetting('hideSubHeader')"
@@ -16,6 +16,7 @@
                         [source]="source"
                         [deleteConfirm]="deleteConfirm"
                         [editConfirm]="editConfirm"
+                        (hyperlinkClick)="OnHyperlinkClick($event)"
                         (edit)="edit.emit($event)"
                         (delete)="delete.emit($event)"
                         (customAction1)="customAction1.emit($event)"
