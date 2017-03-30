@@ -18,7 +18,11 @@ var CellComponent = (function () {
         this.mode = 'inline';
         this.isInEditing = false;
         this.edited = new core_1.EventEmitter();
+        this.hyperlinkClick = new core_1.EventEmitter();
     }
+    CellComponent.prototype.onHyperlinkClick = function (event) {
+        return this.hyperlinkClick.emit(this.cell);
+    };
     CellComponent.prototype.onEdited = function (event) {
         if (this.isNew) {
             this.grid.create(this.grid.getNewRow(), this.createConfirm);
@@ -69,10 +73,14 @@ __decorate([
     core_1.Output(),
     __metadata("design:type", Object)
 ], CellComponent.prototype, "edited", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], CellComponent.prototype, "hyperlinkClick", void 0);
 CellComponent = __decorate([
     core_1.Component({
         selector: 'ng2-smart-table-cell',
-        template: "\n    <table-cell-view-mode *ngIf=\"!isInEditing\" [cell]=\"cell\"></table-cell-view-mode>\n    <table-cell-edit-mode *ngIf=\"isInEditing\" [cell]=\"cell\"\n                          [inputClass]=\"inputClass\"\n                          (edited)=\"onEdited($event)\">\n    </table-cell-edit-mode>\n  ",
+        template: "\n    <table-cell-view-mode *ngIf=\"!isInEditing\" [cell]=\"cell\" (hyperlinkClick)=\"onHyperlinkClick($event)\"></table-cell-view-mode>\n    <table-cell-edit-mode *ngIf=\"isInEditing\" [cell]=\"cell\"\n                          [inputClass]=\"inputClass\"\n                          (edited)=\"onEdited($event)\">\n    </table-cell-edit-mode>\n  ",
     })
 ], CellComponent);
 exports.CellComponent = CellComponent;

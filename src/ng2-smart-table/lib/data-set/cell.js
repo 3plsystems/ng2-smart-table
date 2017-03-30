@@ -19,6 +19,9 @@ var Cell = (function () {
         var prepare = valid ? this.column.getValuePrepareFunction() : Cell.PREPARE;
         return prepare.call(null, this.value, this.row.getData());
     };
+    Cell.prototype.getCommandName = function () {
+        return this.column.getCommandNameFunction();
+    };
     Cell.prototype.setValue = function (value) {
         this.newValue = value;
     };

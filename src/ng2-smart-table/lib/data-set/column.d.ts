@@ -20,7 +20,9 @@ export declare class Column {
     valuePrepareFunction: Function;
     filterFunction: Function;
     cellRenderFunction: Function;
+    commandNameFunction: Function;
     constructor(id: string, settings: any, dataSet: DataSet);
+    getCommandNameFunction(): Function;
     getCompareFunction(): Function;
     getValuePrepareFunction(): Function;
     getFilterFunction(): Function;

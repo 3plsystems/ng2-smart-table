@@ -9,6 +9,7 @@ export declare class Ng2SmartTableComponent implements OnChanges {
     userRowSelect: EventEmitter<any>;
     delete: EventEmitter<any>;
     edit: EventEmitter<any>;
+    hyperlinkClick: EventEmitter<any>;
     customAction1: EventEmitter<any>;
     customAction2: EventEmitter<any>;
     customAction3: EventEmitter<any>;
@@ -23,6 +24,7 @@ export declare class Ng2SmartTableComponent implements OnChanges {
     ngOnChanges(changes: {
         [propertyName: string]: SimpleChange;
     }): void;
+    OnHyperlinkClick(event: any): void;
     editRowSelect(row: Row): void;
     onUserSelectRow(row: Row): void;
     multipleSelectRow(row: Row): void;

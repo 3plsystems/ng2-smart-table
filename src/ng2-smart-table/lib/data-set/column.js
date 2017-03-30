@@ -15,6 +15,9 @@ var Column = (function () {
         this.editor = { type: '', config: {}, component: null };
         this.process();
     }
+    Column.prototype.getCommandNameFunction = function () {
+        return this.commandNameFunction;
+    };
     Column.prototype.getCompareFunction = function () {
         return this.compareFunction;
     };
@@ -44,6 +47,7 @@ var Column = (function () {
         this.valuePrepareFunction = this.settings['valuePrepareFunction'];
         this.filterFunction = this.settings['filterFunction'];
         this.cellRenderFunction = this.settings['cellRenderFunction'];
+        this.commandNameFunction = this.settings['commandNameFunction'];
     };
     Column.prototype.prepareType = function () {
         return this.settings['type'] || this.determineType();

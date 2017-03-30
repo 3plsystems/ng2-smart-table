@@ -20,6 +20,7 @@ var Ng2SmartTableComponent = (function () {
         this.userRowSelect = new core_1.EventEmitter();
         this.delete = new core_1.EventEmitter();
         this.edit = new core_1.EventEmitter();
+        this.hyperlinkClick = new core_1.EventEmitter();
         this.customAction1 = new core_1.EventEmitter();
         this.customAction2 = new core_1.EventEmitter();
         this.customAction3 = new core_1.EventEmitter();
@@ -110,6 +111,9 @@ var Ng2SmartTableComponent = (function () {
         else {
             this.initGrid();
         }
+    };
+    Ng2SmartTableComponent.prototype.OnHyperlinkClick = function (event) {
+        this.hyperlinkClick.emit(event);
     };
     Ng2SmartTableComponent.prototype.editRowSelect = function (row) {
         if (this.grid.getSetting('selectMode') === 'multi')
@@ -213,6 +217,10 @@ __decorate([
     core_1.Output(),
     __metadata("design:type", core_1.EventEmitter)
 ], Ng2SmartTableComponent.prototype, "edit", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], Ng2SmartTableComponent.prototype, "hyperlinkClick", void 0);
 __decorate([
     core_1.Output(),
     __metadata("design:type", core_1.EventEmitter)

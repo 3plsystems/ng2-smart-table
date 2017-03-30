@@ -12,6 +12,7 @@ var core_1 = require("@angular/core");
 var cell_1 = require("../../../lib/data-set/cell");
 var ViewCellComponent = (function () {
     function ViewCellComponent() {
+        this.hyperlinkClick = new core_1.EventEmitter();
     }
     ViewCellComponent.prototype.ngOnChanges = function (changes) {
         var _this = this;
@@ -19,6 +20,9 @@ var ViewCellComponent = (function () {
     };
     ViewCellComponent.prototype.ngAfterViewInit = function () {
         this.renderCustomValue();
+    };
+    ViewCellComponent.prototype.onHyperLinkClick = function () {
+        this.hyperlinkClick.emit(this.cell);
     };
     ViewCellComponent.prototype.renderCustomValue = function () {
         var cellRenderFunc = this.cell.getColumn().getCellRenderFunction();
@@ -32,13 +36,17 @@ __decorate([
     __metadata("design:type", cell_1.Cell)
 ], ViewCellComponent.prototype, "cell", void 0);
 __decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], ViewCellComponent.prototype, "hyperlinkClick", void 0);
+__decorate([
     core_1.ViewChild('cellContainer'),
     __metadata("design:type", core_1.ElementRef)
 ], ViewCellComponent.prototype, "cellRef", void 0);
 ViewCellComponent = __decorate([
     core_1.Component({
         selector: 'table-cell-view-mode',
-        template: "\n    <div [ngSwitch]=\"cell.getColumn().type\">\n        <div *ngSwitchCase=\"'html'\" #cellContainer [innerHTML]=\"cell.getValue()\"></div>\n\n        <div *ngSwitchDefault #cellContainer>{{ cell.getValue() }}</div>\n    </div>\n    "
+        template: "\n    <div [ngSwitch]=\"cell.getColumn().type\">\n        <div *ngSwitchCase=\"'html'\" #cellContainer [innerHTML]=\"cell.getValue()\"></div>\n        <div *ngSwitchCase=\"'hyperlink'\" #cellContainer><a href='javascript:void(0)' (click)='onHyperLinkClick();' [innerHTML]=\"cell.getValue()\"></a></div>\n        <div *ngSwitchDefault #cellContainer>{{ cell.getValue() }}</div>\n    </div>\n    "
     })
 ], ViewCellComponent);
 exports.ViewCellComponent = ViewCellComponent;

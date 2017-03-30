@@ -13,5 +13,7 @@ export declare class CellComponent {
     mode: string;
     isInEditing: boolean;
     edited: EventEmitter<any>;
+    hyperlinkClick: EventEmitter<any>;
+    onHyperlinkClick(event: any): void;
     onEdited(event: any): void;
 }

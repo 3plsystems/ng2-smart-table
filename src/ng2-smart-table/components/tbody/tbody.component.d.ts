@@ -8,6 +8,7 @@ export declare class Ng2SmartTableTbodyComponent {
     save: EventEmitter<any>;
     cancel: EventEmitter<any>;
     edit: EventEmitter<any>;
+    hyperlinkClick: EventEmitter<any>;
     customAction1: EventEmitter<any>;
     customAction2: EventEmitter<any>;
     customAction3: EventEmitter<any>;
@@ -17,4 +18,5 @@ export declare class Ng2SmartTableTbodyComponent {
     userSelectRow: EventEmitter<any>;
     editRowSelect: EventEmitter<any>;
     multipleSelectRow: EventEmitter<any>;
+    OnCellClick(event: any): void;
 }

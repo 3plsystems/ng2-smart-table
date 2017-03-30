@@ -15,6 +15,7 @@ var Ng2SmartTableTbodyComponent = (function () {
         this.save = new core_1.EventEmitter();
         this.cancel = new core_1.EventEmitter();
         this.edit = new core_1.EventEmitter();
+        this.hyperlinkClick = new core_1.EventEmitter();
         this.customAction1 = new core_1.EventEmitter();
         this.customAction2 = new core_1.EventEmitter();
         this.customAction3 = new core_1.EventEmitter();
@@ -25,6 +26,9 @@ var Ng2SmartTableTbodyComponent = (function () {
         this.editRowSelect = new core_1.EventEmitter();
         this.multipleSelectRow = new core_1.EventEmitter();
     }
+    Ng2SmartTableTbodyComponent.prototype.OnCellClick = function (event) {
+        this.hyperlinkClick.emit(event);
+    };
     return Ng2SmartTableTbodyComponent;
 }());
 __decorate([
@@ -55,6 +59,10 @@ __decorate([
     core_1.Output(),
     __metadata("design:type", Object)
 ], Ng2SmartTableTbodyComponent.prototype, "edit", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], Ng2SmartTableTbodyComponent.prototype, "hyperlinkClick", void 0);
 __decorate([
     core_1.Output(),
     __metadata("design:type", Object)

@@ -12,6 +12,7 @@ export declare class Cell {
     getColumn(): Column;
     getRow(): Row;
     getValue(): any;
+    getCommandName(): any;
     setValue(value: any): any;
     getId(): string;
     getTitle(): string;
